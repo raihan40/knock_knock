@@ -21,16 +21,16 @@ io.on('connection', socket => {
     socket.on('send', messege => {
         socket.broadcast.emit('receive', { messege: messege, name: user[socket.id] })
     })
+    socket.on('img',(imgData) => {
+        socket.broadcast.emit('newImg',imgData);
+    });
+    
     socket.on('disconnect', messege => {
         socket.broadcast.emit('left', user[socket.id]);
         delete user[socket.id];
         socket.broadcast.emit("update-count",socket.client.conn.server.clientsCount)
     });
-
 });
-
-
-
 server.listen(PORT, () => {
     console.log("Server listen on port", PORT)
 })

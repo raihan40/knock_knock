@@ -11,24 +11,41 @@
 
 </head>
 
+
+
+
 <body>
     <nav>
         <img class="logo" src="icon.png" alt="">
     </nav>
     <h1>So You are here to knock! knock!</h1>
 
+
+
+
     <div class="container">
+	<p id="copywrite"><marquee behavior=alternate >Created By Raihan </marquee></p>
         <div id="middle"></div>
         <div id="Active"></div>
     </div>
+
+
+
     <div class="send">
-        <form action="#" id="send-container">
-            <input type="text" name="messageInp" id="messageInp" placeholder="What are you waiting for?" style="text-align: center">
+
+        <form action="..."  autocomplete="off" required id="send-container">
+            <input required  type="text" name="messageInp" id="messageInp" placeholder="What are you waiting for?" style="text-align: center">
             <button class="btn" type="submit">send</button>
+            <label for="sendImage" class="imageLable">
+                <input type="button" value="image" class="btn1" />
+                <input id="sendImage" type="file" value="image"/>
+            </label>
+            
         </form>
 
     </div>
     <script src="js/client.js"></script>
+    <button class="btn2" onclick="close_window();return false;" type="button">Exit</button>
 </body>
 
 </html>
